@@ -10,7 +10,8 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-let jobs = []; // in-memory database (reset on server restart)
+// In-memory job database
+let jobs = [];
 
 // GET all jobs
 app.get('/jobs', (req, res) => {
@@ -39,8 +40,7 @@ app.put('/jobs/:id', (req, res) => {
 
 // DELETE a job by id
 app.delete('/jobs/:id', (req, res) => {
-    const { id } = req.params;
-    jobs = jobs.filter(job => job.id !== id);
+    jobs = jobs.filter(job => job.id !== req.params.id);
     res.json({ message: 'Job deleted' });
 });
 
