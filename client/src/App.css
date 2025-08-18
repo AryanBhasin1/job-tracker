@@ -1,0 +1,41 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.job-form input, .job-form select {
+  margin: 5px;
+  padding: 5px;
+}
+
+.job-form button {
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+.filter {
+  margin: 10px 0;
+}
+
+.job-list {
+  list-style: none;
+  padding: 0;
+}
+
+.job-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+.error {
+  color: red;
+}
