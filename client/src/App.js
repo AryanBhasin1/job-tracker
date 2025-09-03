@@ -26,10 +26,13 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Try auto-login if token exists
+  // Try auto-login if token + user exist
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setUser({ username: "demo" }); // minimal (backend doesn’t return user profile)
+    const token = localStorage.getItem("token");
+    const storedUser = localStorage.getItem("user");
+
+    if (token && storedUser) {
+      setUser(JSON.parse(storedUser)); // restore saved user
       fetchJobs();
     }
   }, []);
@@ -46,7 +49,8 @@ function App() {
 
       if (isLogin) {
         localStorage.setItem("token", res.data.token);
-        setUser({ username: authForm.username });
+        localStorage.setItem("user", JSON.stringify(res.data.user)); // save user object
+        setUser(res.data.user);
         fetchJobs();
       } else {
         alert("Registration successful, please log in.");
@@ -61,6 +65,7 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     setUser(null);
     setJobs([]);
   };
