@@ -9,9 +9,9 @@
 ## Setup Backend
 1. Go to the server folder: `cd server`
 2. Install dependencies: `npm install express cors body-parser uuid bcrypt jsonwebtoken dotenv`
-3. Run server: `node index.js`
-4. Server runs on: http://localhost:5000
-5. Create .env file: `JWT_SECRET=(Whatever you want)`
+3. Create .env file: `JWT_SECRET=(Whatever you want)`
+4. Run server: `node index.js`
+5. Server runs on: http://localhost:5000
 
 ## Setup Frontend
 1. Go to the client folder: `cd client`
