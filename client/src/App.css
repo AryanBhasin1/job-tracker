@@ -1,13 +1,15 @@
 .container {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 h1 {
   text-align: center;
 }
 
-.job-form input, .job-form select {
+.job-form input,
+.job-form select {
   margin: 5px;
   padding: 5px;
 }
@@ -15,6 +17,7 @@ h1 {
 .job-form button {
   padding: 5px 10px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .filter {
@@ -30,12 +33,16 @@ h1 {
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px;
+  background-color: #fff;
 }
 
 button {
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .error {
   color: red;
+  font-weight: bold;
+  margin-top: 10px;
 }
